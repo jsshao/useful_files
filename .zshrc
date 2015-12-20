@@ -84,7 +84,23 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias v="vim";
 def function c () {
-    cd $1
-    ls
+        cd $1
+            ls
 }
 alias open="xdg-open";
+alias school="ssh jsshao@ubuntu1204-002.student.cs.uwaterloo.ca";
+export PATH=$PATH:/usr/share/scala/bin/
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+
+# Load zsh-syntax-highlighting.
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Load zsh-autosuggestions.
+source ~/.zsh/zsh-autosuggestions/autosuggestions.zsh
+
+# Enable autosuggestions automatically.
+zle-line-init() {
+    zle autosuggest-start
+}
+zle -N zle-line-init
